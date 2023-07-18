@@ -5,7 +5,7 @@ cap = cv2.VideoCapture(0)
 # size = (600, 200, 3) # Указываем желаемый размер окна (высоту, ширину, число каналов)
 
 while True:
-    ret, frame = cap.read()
+    ret, frame = cap.read() # ret - успешность захвата кадра. Если кадр был успешно захвачен, ret будет равен True. В противном случае, если что-то пошло не так или видео закончилось, ret будет равен False
     width = int(cap.get(3))
     height = int(cap.get(4))
 
@@ -26,7 +26,7 @@ while True:
     if cv2.waitKey(1) == ord('q'):
         break
 
-cap.release()
+cap.release() # освобождаем память от захвата видео на устройстве
 cv2.destroyAllWindows()
 
 
