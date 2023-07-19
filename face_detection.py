@@ -9,7 +9,7 @@ mouth_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_smile
 while True:
     ret, frame = cap.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) # переводим в серый цвет картинку
-    faces = face_cascade.detectMultiScale(gray, 1.3, 6) # определяем лицо
+    faces = face_cascade.detectMultiScale(gray, 1.1, 7) # определяем лицо # примечание: парметры для разных помезений свои
     font = cv2.FONT_HERSHEY_PLAIN # шрифт
 
     # вывод лица
@@ -20,7 +20,7 @@ while True:
         roy_color = frame[y:y+h, x:x+w]  # это подмножество изображения содержит только пиксели, охватывающие область лица в цвете
 
         # вывод глаз
-        eyes = eye_cascade.detectMultiScale(roy_grey, 1.1, 20) # определиение глаз
+        eyes = eye_cascade.detectMultiScale(roy_grey, 1.3, 20) # определиение глаз
         for (ex, ey, ew, eh) in eyes:
             cv2.rectangle(roy_color, (ex, ey), (ex+ew, ey+eh), (0,0,255), 2)
             cv2.putText(roy_color, 'Eyes', (ex - 25, ey - 10), font, 1, (0, 0, 255), 2)  # приписка, что это улыбка
