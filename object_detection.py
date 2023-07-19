@@ -1,9 +1,10 @@
 import cv2
 import numpy as np
 
-img = cv2.resize(cv2.imread('assets/photo2.jpg'), (0, 0), fx=0.6, fy=0.6)
-temp = cv2.resize(cv2.imread('assets/perch.jpg'), (0, 0), fx=0.6, fy=0.6)
-temp1 = cv2.resize(cv2.imread('assets/bool.jpg'), (0, 0), fx=0.6, fy=0.6)
+
+img = cv2.resize(cv2.imread('assets/photo2.jpg'), (0, 0), fx=0.5, fy=0.5)
+temp = cv2.resize(cv2.imread('assets/perch.jpg'), (0, 0), fx=0.5, fy=0.5)
+temp1 = cv2.resize(cv2.imread('assets/bool.jpg'), (0, 0), fx=0.5, fy=0.5)
 height, width, _ = temp.shape
 h, w, _= temp1.shape
 
@@ -36,9 +37,6 @@ for method in methods:
 
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-
-
-
 
 
 
