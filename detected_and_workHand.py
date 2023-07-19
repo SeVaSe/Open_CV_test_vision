@@ -3,7 +3,7 @@ import numpy as np
 import mediapipe as mp
 
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 mpHands = mp.solutions.hands #  Здесь мы создаем объект mpHands, который представляет собой модель для обнаружения рук из библиотеки Mediapipe
 hands = mpHands.Hands() # Объект для обнаружения рук в пространстве
 mpDraw = mp.solutions.drawing_utils # объект mpDraw, который содержит инструменты для рисования различных элементов (например, точек, линий) на кадрах изображения
@@ -23,6 +23,7 @@ while True:
                 #print(f'[ID:{id} | mark:{lm}]')
                 h, w, channel = img.shape
                 cx, cy = int(lm.x * w), int(lm.y * h)
+                print(f'[ID:{id} | mark:{lm}]')
 
 
                 if cx > w // 2:
